@@ -1,2 +1,2 @@
 # Japanese-Verb-Conjugator
-Japanese Verb Conjugator that asks user for a verb ind dictionary form that they'd like to get all the possible conjugations
+Japanese Verb Conjugator that asks user for a verb in dictionary form which they would like to get all the possible verb conjugations.
