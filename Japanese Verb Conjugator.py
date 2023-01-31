@@ -7,7 +7,7 @@
 # Ask for plain form to then convert into desired form
  
 alphabet_by_first_letter = [
-    ["あ", "い", "う" "え", "お"],
+    ["あ", "い", "う", "え", "お"],
     ["か", "き", "く", "け", "こ"],
     ["さ", "し", "す", "せ", "そ"],
     ["た", "ち", "つ", "て", "と"],
@@ -33,24 +33,25 @@ verb = input("Please enter the verb in dictionary form: ")
 
 
 # Dictionary Form to Present Formal Form
-# Ichidan Verbs
-if verb[-1] == "る" and verb[-2] in alphabet_by_vowel[1] or alphabet_by_vowel[3]:
-    prefix = verb[:-1]
-    print(f"The Present Polite Form of this verb is: {prefix}ます")
-    
-    
-# Godan Verbs
-if verb[-2] not in alphabet_by_vowel[1] or alphabet_by_vowel[3]:
-    prefix = verb[:-1]
-    for i in range(len(alphabet_by_first_letter)):
-        if verb[-1] in alphabet_by_first_letter[i]:
-            index = i
-    prefix_vowel = alphabet_by_first_letter[index][1]
-    print(f"{prefix}{prefix_vowel}ます")
 
 # Irregular Verbs 
 if verb == "する":
     print(f"{alphabet_by_vowel[2][1]}ます")
 
-if verb == "くる":
+elif verb == "くる":
     print("きます")
+
+# Ichidan Verbs
+elif verb[-1] == "る" and verb[-2] in alphabet_by_vowel[1] or verb[-2] in alphabet_by_vowel[3]:
+    prefix = verb[:-1]
+    print(f"The Present Polite Form of this verb is: {prefix}ます")
+    
+# Godan Verbs
+elif verb[-1] in alphabet_by_vowel[2] and verb[-2] in alphabet_by_vowel[0] or alphabet_by_vowel[2] or alphabet_by_vowel[4]:
+    prefix = verb[:-1]
+    for i in range(len(alphabet_by_first_letter)):
+        if verb[-1] in alphabet_by_first_letter[i]:
+            row = i
+    prefix_vowel = alphabet_by_first_letter[row][1]
+    print(f"{prefix}{prefix_vowel}ます")
+
