@@ -69,8 +69,6 @@ class godan_verb:
 verb = input("Please enter the verb in dictionary form: ")
 
 # Dictionary Form to Polite Form
-
-# Irregular Verbs 
 if verb == "する":
     print(f"します")
 
@@ -84,7 +82,7 @@ elif verb[-1] in alphabet_by_vowel[2] and verb[-2] in alphabet_by_vowel[0] or al
     godan_verb.polite(verb)
 
 
-# Irregular Verbs 
+# Dictionary Form to Polite Negative Form
 if verb == "する":
     print(f"しません")
 
@@ -92,7 +90,7 @@ elif verb == "くる":
     print("きません")
 
 elif verb[-1] == "る" and verb[-2] in alphabet_by_vowel[1] or verb[-2] in alphabet_by_vowel[3]:
-    godan_verb.polite_negative(verb)
+    ichidan_verb.polite_negative(verb)
 
 elif verb[-1] in alphabet_by_vowel[2] and verb[-2] in alphabet_by_vowel[0] or alphabet_by_vowel[2] or alphabet_by_vowel[4]:
     godan_verb.polite_negative(verb)
